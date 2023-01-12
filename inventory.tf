@@ -97,7 +97,7 @@ resource "null_resource" "cp_ansible" {
 
   provisioner "file" {
     source      = "${path.root}/ansible"
-    destination = "/home/ubuntu/"
+    destination = "/home/ubuntu"
 
     connection {
       type        = "ssh"
