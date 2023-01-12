@@ -24,7 +24,7 @@ resource "aws_instance" "bastionhost" {
               EOF
 
   tags = {
-    Name        = "bastionhost-${var.name}"
+    Name        = "bh-instances"
   }
 }
 
