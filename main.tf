@@ -20,7 +20,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
   }
 
   filter {
@@ -46,7 +46,7 @@ resource "aws_vpc" "hashicorp_vpc" {
   enable_dns_hostnames = "true"
 
   tags = {
-    Name        = "${var.name}-vpc"
+    Name = "${var.name}-vpc"
   }
 }
 
