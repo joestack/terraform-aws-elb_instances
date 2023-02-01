@@ -30,6 +30,7 @@ resource "aws_instance" "bastionhost" {
 
 
 resource "aws_route53_record" "bastionhost" {
+  count   = var.dns_enabled ? 1 : 0
   zone_id = data.aws_route53_zone.selected.zone_id
   name    = lookup(aws_instance.bastionhost.*.tags[0], "Name")
   #name    = "bastionhost"

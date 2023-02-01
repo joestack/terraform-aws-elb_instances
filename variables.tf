@@ -7,6 +7,23 @@ variable "name" {
   description = "Unique name of the deployment"
 }
 
+variable "vault_public_url" {
+  description = "Vault Address"
+}
+
+variable "vault_username" {
+  description = "Username to checkout AWS Provider credentials from Vault"
+}
+
+variable "vault_password" {
+  description = "Password to checkout credentials"
+}
+
+variable "vault_namespace" {
+  default = "admin"
+}
+
+
 variable "web_node_count" {
   description = "number of worker nodes"
   default     = "5"
@@ -34,6 +51,11 @@ variable "pub_key" {
 
 variable "pri_key" {
   description = "the base64 encoded private key to be used to access the bastion host and ansible nodes"
+}
+
+variable "dns_enabled" {
+  description = "true or false"
+  default     = false
 }
 
 variable "dns_domain" {
