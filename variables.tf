@@ -26,7 +26,7 @@ variable "name" {
 
 variable "web_node_count" {
   description = "number of worker nodes"
-  default     = "5"
+  #default     = "5"
 }
 
 variable "instance_type" {
@@ -55,7 +55,7 @@ variable "pri_key" {
 
 variable "dns_enabled" {
   description = "true or false"
-  default     = false
+  default     = true 
 }
 
 variable "dns_domain" {
