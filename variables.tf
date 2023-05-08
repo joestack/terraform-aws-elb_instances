@@ -7,21 +7,21 @@ variable "name" {
   description = "Unique name of the deployment"
 }
 
-variable "vault_public_url" {
-  description = "Vault Address"
-}
+# variable "vault_public_url" {
+#   description = "Vault Address"
+# }
 
-variable "vault_username" {
-  description = "Username to checkout AWS Provider credentials from Vault"
-}
+# variable "vault_username" {
+#   description = "Username to checkout AWS Provider credentials from Vault"
+# }
 
-variable "vault_password" {
-  description = "Password to checkout credentials"
-}
+# variable "vault_password" {
+#   description = "Password to checkout credentials"
+# }
 
-variable "vault_namespace" {
-  default = "admin"
-}
+# variable "vault_namespace" {
+#   default = "admin"
+# }
 
 
 variable "web_node_count" {
@@ -60,7 +60,7 @@ variable "dns_enabled" {
 
 variable "dns_domain" {
   description = "DNS domain suffix"
-  default     = "hashidemos.io"
+  default     = "joern-stack.aws.sbx.hashicorpdemo.com"
 }
 
 variable "network_address_space" {

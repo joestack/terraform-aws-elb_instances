@@ -7,25 +7,25 @@ terraform {
   }
 }
 
-provider "vault" {
-  #address   = data.terraform_remote_state.vault-cluster.outputs.vault_public_url
-  address   = var.vault_public_url
-  auth_login_userpass {
-    username = var.vault_username
-    password = var.vault_password
-    namespace = var.vault_namespace
-  }
-}
+# provider "vault" {
+#   #address   = data.terraform_remote_state.vault-cluster.outputs.vault_public_url
+#   address   = var.vault_public_url
+#   auth_login_userpass {
+#     username = var.vault_username
+#     password = var.vault_password
+#     namespace = var.vault_namespace
+#   }
+# }
 
-data "vault_aws_access_credentials" "creds" {
-  backend = "aws"
-  role    = "deploy"
-}
+# data "vault_aws_access_credentials" "creds" {
+#   backend = "aws"
+#   role    = "deploy"
+# }
 
 provider "aws" {
     region = var.aws_region
-    access_key = data.vault_aws_access_credentials.creds.access_key
-    secret_key = data.vault_aws_access_credentials.creds.secret_key
+    # access_key = data.vault_aws_access_credentials.creds.access_key
+    # secret_key = data.vault_aws_access_credentials.creds.secret_key
 }
 
 data "aws_availability_zones" "available" {
